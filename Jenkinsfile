@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    triggers {
+        pollSCM('H/5 * * * *')
+    }
+
     environment {
         DOCKERHUB_USER = 'iamnmk777'
         IMAGE_NAME     = 'ecom-product-service'
